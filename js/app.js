@@ -13,10 +13,3 @@ semiTransparenteNavbar()
 window.addEventListener("scroll", semiTransparenteNavbar);
 
 /*-----Scroll Reveal ------------*/
-
-let sr = ScrollReveal({
-    duration: 2500,
-    distance: "60px"
-})
-sr.reveal(".showcaseInfo", {delay: 600});
-sr.reveal(".showcaseImage", {origin:"top",delay: 700});
