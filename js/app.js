@@ -5,10 +5,26 @@ const firstSkill = document.querySelector(".skill:first-child");
 
 const skCounters = document.querySelectorAll(".counter span");
 const progressBars = document.querySelectorAll(".skill svg circle")
+const mlSection = document.querySelector(".milestones");
+const mlCount = document.querySelectorAll(".number span")
+let skillsPlayed = false;
+let mlPlayed = false;
+
 window.addEventListener("scroll", ()=>{
    if(!skillsPlayed) skillsCounter();
+   if(!mlPlayed) mlCounter();
 })
-let skillsPlayed = false
+
+function updateCount(num, maxNum){
+    let currentNum = +num.innerText;
+    
+    if(currentNum<maxNum){
+        num.innerText = currentNum + 1
+        setTimeout(()=>{
+            updateCount(num, maxNum);
+        }, 12)
+    }
+}
 
 
 function semiTransparenteNavbar (){
@@ -39,16 +55,6 @@ function hasReached(el){
     }
 }
 
-function updateCount(num, maxNum){
-    let currentNum = +num.innerText;
-    
-    if(currentNum<maxNum){
-        num.innerText = currentNum + 1
-        setTimeout(()=>{
-            updateCount(num, maxNum);
-        }, 12)
-    }
-}
 
 
 function skillsCounter(){
@@ -67,4 +73,17 @@ function skillsCounter(){
     })
 
     progressBars.forEach((p) => (p.style.animation = "progress 2s ease-in-out forwards"))
+}
+
+/*services*/
+
+function mlCounter() {
+    mlPlayed=true;
+    if(!hasReached(mlSection)) return;
+    mlCount.forEach(counter =>{
+        let target = +counter.dataset.target;
+        setTimeout(()=>{
+            updateCount(counter,target)
+        },400)
+    })
 }

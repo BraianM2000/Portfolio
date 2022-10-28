@@ -110,7 +110,9 @@ ul {
     letter-spacing: 0.4px;
     text-transform: capitalize;
     transition: 0.3s;
+    text-align: center;
     margin-right: 1rem;
+    min-width: 125px;
 }
 
 .btn:hover {
@@ -553,4 +555,41 @@ header.scrolled {
     left: 100%;
     top: 75%;
     transform: translate(-50%, -50%);
+}
+
+
+/*services*/
+
+.services .container{
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    column-gap: 6rem;
+    align-items: center;
+}
+
+.milestones{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.milestones h2{
+    color: var(--main-color-1);
+    font-size: 1.3rem;
+
+}
+.milestones h2 span{
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-right: 0.1rem;
+}
+
+.milestones h5{
+    color: var(--heading-color);
+    line-height: 0.9;
+    font-weight: 500;
+    font-size: 0.95rem;
 }
