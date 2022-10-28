@@ -665,3 +665,30 @@ header.scrolled {
     transform: translate(-50%, 50%);
     z-index: -1;
 }
+
+/*portfolio*/
+
+.portfolioHeader{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.portfollioTitle{
+    padding-bottom: 1rem;
+}
+
+.filterBtn{
+    display: inline-block;
+    color: var(--heading-color);
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    margin-left: 1.3rem;
+    font-family:inherit ;
+    text-transform: uppercase;
+}
