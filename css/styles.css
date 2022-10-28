@@ -14,7 +14,7 @@
     --bg-color-transparent: rgba(255, 255, 255, 0.6);
     --heading-color: hsl(var(--hue-1), 61%, 24%);
     --text-color: hsl(var(--hue-1), 17%, 63%);
-    --section-padding:7rem;
+    --section-padding: 7rem;
 }
 
 *,
@@ -146,12 +146,12 @@ ul {
 }
 
 
-.section{
+.section {
     position: relative;
     padding: var(--section-padding) 0;
 }
 
-.triangle{
+.triangle {
     width: 95px;
     opacity: 0.18;
 }
@@ -297,48 +297,48 @@ header.scrolled {
     margin: 0.8rem 0;
 }
 
-.showcaseImage{
+.showcaseImage {
     position: relative;
     width: 100%;
     min-height: calc(100% + 120px);
-    background-image: linear-gradient(124deg, var(--main-color-1) , var(--main-color-2)  );
+    background-image: linear-gradient(124deg, var(--main-color-1), var(--main-color-2));
     margin-top: -120px;
-    border-radius:0 0 80px 80px;
+    border-radius: 0 0 80px 80px;
 }
 
-.showcaseImage .person{
+.showcaseImage .person {
     position: absolute;
     width: 80%;
     height: 95%;
     bottom: 0;
     left: 10%;
-    transform: translatey(-2%) ;
+    transform: translatey(-2%);
 }
 
-.dots{
+.dots {
     width: 112px;
 }
 
-.squares{
+.squares {
     width: 70px;
 }
 
-.showcase .circles{
+.showcase .circles {
     position: absolute;
     width: 190px;
     left: 0;
-    top:80%;
+    top: 80%;
     transform: translate(-50%, -50%);
 }
 
-.showcase .dots{
+.showcase .dots {
     position: absolute;
     left: 100%;
     top: 30%;
     transform: translate(-50%, -50%);
 }
 
-.showcase .squares{
+.showcase .squares {
     position: absolute;
     left: 25%;
     bottom: 120px;
@@ -347,16 +347,16 @@ header.scrolled {
 
 /*About*/
 
-.about .container{
+.about .container {
     display: grid;
-    grid-template-columns: 1.05fr  1fr ;
+    grid-template-columns: 1.05fr 1fr;
 }
 
- .about .text{
+.about .text {
     margin: 3rem 0 4rem;
- }
+}
 
- .aboutGrid{
+.aboutGrid {
     display: grid;
     grid-template-columns: 190px 190px;
     grid-template-rows: 190px 190px;
@@ -365,9 +365,9 @@ header.scrolled {
     row-gap: 100px;
     margin-right: 2rem;
     position: relative;
- }
+}
 
- .aboutCard{
+.aboutCard {
     background-color: var(--bg-color-2);
     width: 100%;
     height: 100%;
@@ -379,43 +379,43 @@ header.scrolled {
     transition: 0.5s transform;
 }
 
-.aboutCard:nth-child(1){
+.aboutCard:nth-child(1) {
     border-radius: 40px 40px 5px 40px;
 }
 
-.aboutCard:nth-child(2){
+.aboutCard:nth-child(2) {
     margin-top: 50px;
     border-radius: 40px 40px 40px 5px;
 }
 
-.aboutCard:nth-child(3){
+.aboutCard:nth-child(3) {
     margin-top: -50px;
     border-radius: 40px 5px 40px 40px;
 }
 
-.aboutCard:nth-child(4){
+.aboutCard:nth-child(4) {
     border-radius: 5px 40px 40px 40px;
 }
 
- .icon{
+.icon {
     width: 60px;
-    
- }
 
-.st0{
+}
+
+.st0 {
     fill: var(--bg-color-3);
 }
 
-.st1{
+.st1 {
     fill: #c5e3ea;
 }
 
-.st2{
+.st2 {
     fill: var(--heading-color);
     transition: 0.3s;
 }
 
-.aboutCard h3{
+.aboutCard h3 {
     color: var(--heading-color);
     font-weight: 600;
     font-size: 1rem;
@@ -423,15 +423,15 @@ header.scrolled {
     letter-spacing: 0.3px;
 }
 
-.aboutCard:hover{
+.aboutCard:hover {
     transform: scale(1.1);
 }
 
-.aboutCard:hover .st2{
+.aboutCard:hover .st2 {
     fill: var(--main-color-1)
 }
 
-.aboutGrid::before{
+.aboutGrid::before {
     content: "";
     position: absolute;
     width: 210px;
@@ -446,9 +446,111 @@ header.scrolled {
 
 
 
-.about .triangle{
+.about .triangle {
     position: absolute;
     left: 90%;
     top: 27%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+}
+
+
+/*Silss*/
+
+.skills {
+    overflow: hidden;
+}
+
+.sillsBox {
+    background-color: var(--bg-color-2);
+    padding: 5rem 6rem;
+    border-radius: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.boxDesc {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 2rem;
+}
+
+.skillsWrap {
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skProgress {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.skProgress svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.skProgress svg circle {
+    fill: var(--bg-color-3);
+    stroke-width: 5px;
+    stroke: var(--main-color-1);
+    stroke-linecap: round;
+    stroke-dasharray: 427;
+    stroke-dashoffset: 426;
+}
+
+@keyframes progress {
+    to{
+        stroke-dashoffset:var(--target) ;
+    }
+}
+
+.counter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: var(--heading-color);
+    font-weight: 400;
+}
+
+.counter span {
+    font-size: 2.45rem;
+}
+
+.skTitle {
+    color: var(--heading-color);
+    margin-top: .75rem;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.skills .dots{
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.skills .squares{
+    position: absolute;
+    left: 100%;
+    top: 75%;
+    transform: translate(-50%, -50%);
 }

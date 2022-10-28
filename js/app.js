@@ -1,6 +1,14 @@
 const header = document.querySelector("header");
 
 /** Navbar effect**/
+const firstSkill = document.querySelector(".skill:first-child");
+
+const skCounters = document.querySelectorAll(".counter span");
+const progressBars = document.querySelectorAll(".skill svg circle")
+window.addEventListener("scroll", ()=>{
+   if(!skillsPlayed) skillsCounter();
+})
+let skillsPlayed = false
 
 
 function semiTransparenteNavbar (){
@@ -20,3 +28,43 @@ let sr = ScrollReveal({
 })
 sr.reveal(".showcaseInfo", {delay: 600});
 sr.reveal(".showcaseImage", {origin:"top",delay: 700});
+
+/*Skills animations */
+function hasReached(el){
+    let topPosition = el.getBoundingClientRect().top;
+    if(window.innerHeight >=topPosition + el.offsetHeight){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function updateCount(num, maxNum){
+    let currentNum = +num.innerText;
+    
+    if(currentNum<maxNum){
+        num.innerText = currentNum + 1
+        setTimeout(()=>{
+            updateCount(num, maxNum);
+        }, 12)
+    }
+}
+
+
+function skillsCounter(){
+    if(!hasReached(firstSkill)) return;
+     skillsPlayed = true
+
+    skCounters.forEach((counter, i)=>{
+        let target = counter.dataset.target;
+        let strokeValue = 427 - 427 * (target/100);
+
+        progressBars[i].style.setProperty("--target", strokeValue) ;
+
+        setTimeout(()=>{
+            updateCount(counter, target)
+        }, 400)
+    })
+
+    progressBars.forEach((p) => (p.style.animation = "progress 2s ease-in-out forwards"))
+}
